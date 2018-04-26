@@ -10,7 +10,7 @@ options :: Options
 
 ``` purescript
 newtype ClientLimitExceededException
-  = ClientLimitExceededException { "Message" :: NullOrUndefined (ErrorMessage) }
+  = ClientLimitExceededException { "Message" :: Maybe (ErrorMessage) }
 ```
 
 <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
@@ -35,7 +35,7 @@ Constructs ClientLimitExceededException from required parameters
 #### `newClientLimitExceededException'`
 
 ``` purescript
-newClientLimitExceededException' :: ({ "Message" :: NullOrUndefined (ErrorMessage) } -> { "Message" :: NullOrUndefined (ErrorMessage) }) -> ClientLimitExceededException
+newClientLimitExceededException' :: ({ "Message" :: Maybe (ErrorMessage) } -> { "Message" :: Maybe (ErrorMessage) }) -> ClientLimitExceededException
 ```
 
 Constructs ClientLimitExceededException's fields from required parameters
@@ -44,7 +44,7 @@ Constructs ClientLimitExceededException's fields from required parameters
 
 ``` purescript
 newtype ConnectionLimitExceededException
-  = ConnectionLimitExceededException { "Message" :: NullOrUndefined (ErrorMessage) }
+  = ConnectionLimitExceededException { "Message" :: Maybe (ErrorMessage) }
 ```
 
 <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client connections.</p>
@@ -69,7 +69,7 @@ Constructs ConnectionLimitExceededException from required parameters
 #### `newConnectionLimitExceededException'`
 
 ``` purescript
-newConnectionLimitExceededException' :: ({ "Message" :: NullOrUndefined (ErrorMessage) } -> { "Message" :: NullOrUndefined (ErrorMessage) }) -> ConnectionLimitExceededException
+newConnectionLimitExceededException' :: ({ "Message" :: Maybe (ErrorMessage) } -> { "Message" :: Maybe (ErrorMessage) }) -> ConnectionLimitExceededException
 ```
 
 Constructs ConnectionLimitExceededException's fields from required parameters
@@ -142,7 +142,7 @@ Encode FragmentNumberString
 
 ``` purescript
 newtype GetMediaInput
-  = GetMediaInput { "StreamName" :: NullOrUndefined (StreamName), "StreamARN" :: NullOrUndefined (ResourceARN), "StartSelector" :: StartSelector }
+  = GetMediaInput { "StreamName" :: Maybe (StreamName), "StreamARN" :: Maybe (ResourceARN), "StartSelector" :: StartSelector }
 ```
 
 ##### Instances
@@ -165,7 +165,7 @@ Constructs GetMediaInput from required parameters
 #### `newGetMediaInput'`
 
 ``` purescript
-newGetMediaInput' :: StartSelector -> ({ "StreamName" :: NullOrUndefined (StreamName), "StreamARN" :: NullOrUndefined (ResourceARN), "StartSelector" :: StartSelector } -> { "StreamName" :: NullOrUndefined (StreamName), "StreamARN" :: NullOrUndefined (ResourceARN), "StartSelector" :: StartSelector }) -> GetMediaInput
+newGetMediaInput' :: StartSelector -> ({ "StreamName" :: Maybe (StreamName), "StreamARN" :: Maybe (ResourceARN), "StartSelector" :: StartSelector } -> { "StreamName" :: Maybe (StreamName), "StreamARN" :: Maybe (ResourceARN), "StartSelector" :: StartSelector }) -> GetMediaInput
 ```
 
 Constructs GetMediaInput's fields from required parameters
@@ -174,7 +174,7 @@ Constructs GetMediaInput's fields from required parameters
 
 ``` purescript
 newtype GetMediaOutput
-  = GetMediaOutput { "ContentType" :: NullOrUndefined (ContentType), "Payload" :: NullOrUndefined (Payload) }
+  = GetMediaOutput { "ContentType" :: Maybe (ContentType), "Payload" :: Maybe (Payload) }
 ```
 
 ##### Instances
@@ -197,7 +197,7 @@ Constructs GetMediaOutput from required parameters
 #### `newGetMediaOutput'`
 
 ``` purescript
-newGetMediaOutput' :: ({ "ContentType" :: NullOrUndefined (ContentType), "Payload" :: NullOrUndefined (Payload) } -> { "ContentType" :: NullOrUndefined (ContentType), "Payload" :: NullOrUndefined (Payload) }) -> GetMediaOutput
+newGetMediaOutput' :: ({ "ContentType" :: Maybe (ContentType), "Payload" :: Maybe (Payload) } -> { "ContentType" :: Maybe (ContentType), "Payload" :: Maybe (Payload) }) -> GetMediaOutput
 ```
 
 Constructs GetMediaOutput's fields from required parameters
@@ -206,7 +206,7 @@ Constructs GetMediaOutput's fields from required parameters
 
 ``` purescript
 newtype InvalidArgumentException
-  = InvalidArgumentException { "Message" :: NullOrUndefined (ErrorMessage) }
+  = InvalidArgumentException { "Message" :: Maybe (ErrorMessage) }
 ```
 
 <p>The value for this input parameter is invalid.</p>
@@ -231,7 +231,7 @@ Constructs InvalidArgumentException from required parameters
 #### `newInvalidArgumentException'`
 
 ``` purescript
-newInvalidArgumentException' :: ({ "Message" :: NullOrUndefined (ErrorMessage) } -> { "Message" :: NullOrUndefined (ErrorMessage) }) -> InvalidArgumentException
+newInvalidArgumentException' :: ({ "Message" :: Maybe (ErrorMessage) } -> { "Message" :: Maybe (ErrorMessage) }) -> InvalidArgumentException
 ```
 
 Constructs InvalidArgumentException's fields from required parameters
@@ -240,7 +240,7 @@ Constructs InvalidArgumentException's fields from required parameters
 
 ``` purescript
 newtype InvalidEndpointException
-  = InvalidEndpointException { "Message" :: NullOrUndefined (ErrorMessage) }
+  = InvalidEndpointException { "Message" :: Maybe (ErrorMessage) }
 ```
 
 <p> Status Code: 400, Caller used wrong endpoint to write data to a stream. On receiving such an exception, the user must call <code>GetDataEndpoint</code> with <code>AccessMode</code> set to "READ" and use the endpoint Kinesis Video returns in the next <code>GetMedia</code> call. </p>
@@ -265,7 +265,7 @@ Constructs InvalidEndpointException from required parameters
 #### `newInvalidEndpointException'`
 
 ``` purescript
-newInvalidEndpointException' :: ({ "Message" :: NullOrUndefined (ErrorMessage) } -> { "Message" :: NullOrUndefined (ErrorMessage) }) -> InvalidEndpointException
+newInvalidEndpointException' :: ({ "Message" :: Maybe (ErrorMessage) } -> { "Message" :: Maybe (ErrorMessage) }) -> InvalidEndpointException
 ```
 
 Constructs InvalidEndpointException's fields from required parameters
@@ -274,7 +274,7 @@ Constructs InvalidEndpointException's fields from required parameters
 
 ``` purescript
 newtype NotAuthorizedException
-  = NotAuthorizedException { "Message" :: NullOrUndefined (ErrorMessage) }
+  = NotAuthorizedException { "Message" :: Maybe (ErrorMessage) }
 ```
 
 <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
@@ -299,7 +299,7 @@ Constructs NotAuthorizedException from required parameters
 #### `newNotAuthorizedException'`
 
 ``` purescript
-newNotAuthorizedException' :: ({ "Message" :: NullOrUndefined (ErrorMessage) } -> { "Message" :: NullOrUndefined (ErrorMessage) }) -> NotAuthorizedException
+newNotAuthorizedException' :: ({ "Message" :: Maybe (ErrorMessage) } -> { "Message" :: Maybe (ErrorMessage) }) -> NotAuthorizedException
 ```
 
 Constructs NotAuthorizedException's fields from required parameters
@@ -340,7 +340,7 @@ Encode ResourceARN
 
 ``` purescript
 newtype ResourceNotFoundException
-  = ResourceNotFoundException { "Message" :: NullOrUndefined (ErrorMessage) }
+  = ResourceNotFoundException { "Message" :: Maybe (ErrorMessage) }
 ```
 
 <p>Status Code: 404, The stream with the given name does not exist.</p>
@@ -365,7 +365,7 @@ Constructs ResourceNotFoundException from required parameters
 #### `newResourceNotFoundException'`
 
 ``` purescript
-newResourceNotFoundException' :: ({ "Message" :: NullOrUndefined (ErrorMessage) } -> { "Message" :: NullOrUndefined (ErrorMessage) }) -> ResourceNotFoundException
+newResourceNotFoundException' :: ({ "Message" :: Maybe (ErrorMessage) } -> { "Message" :: Maybe (ErrorMessage) }) -> ResourceNotFoundException
 ```
 
 Constructs ResourceNotFoundException's fields from required parameters
@@ -374,7 +374,7 @@ Constructs ResourceNotFoundException's fields from required parameters
 
 ``` purescript
 newtype StartSelector
-  = StartSelector { "StartSelectorType" :: StartSelectorType, "AfterFragmentNumber" :: NullOrUndefined (FragmentNumberString), "StartTimestamp" :: NullOrUndefined (Timestamp), "ContinuationToken" :: NullOrUndefined (ContinuationToken) }
+  = StartSelector { "StartSelectorType" :: StartSelectorType, "AfterFragmentNumber" :: Maybe (FragmentNumberString), "StartTimestamp" :: Maybe (Timestamp), "ContinuationToken" :: Maybe (ContinuationToken) }
 ```
 
 <p>Identifies the chunk on the Kinesis video stream where you want the <code>GetMedia</code> API to start returning media data. You have the following options to identify the starting chunk: </p> <ul> <li> <p>Choose the latest (or oldest) chunk.</p> </li> <li> <p>Identify a specific chunk. You can identify a specific chunk either by providing a fragment number or time stamp (server or producer). </p> </li> <li> <p>Each chunk's metadata includes a continuation token as a Matroska (MKV) tag (<code>AWS_KINESISVIDEO_CONTINUATION_TOKEN</code>). If your previous <code>GetMedia</code> request terminated, you can use this tag value in your next <code>GetMedia</code> request. The API then starts returning chunks starting where the last API ended.</p> </li> </ul>
@@ -399,7 +399,7 @@ Constructs StartSelector from required parameters
 #### `newStartSelector'`
 
 ``` purescript
-newStartSelector' :: StartSelectorType -> ({ "StartSelectorType" :: StartSelectorType, "AfterFragmentNumber" :: NullOrUndefined (FragmentNumberString), "StartTimestamp" :: NullOrUndefined (Timestamp), "ContinuationToken" :: NullOrUndefined (ContinuationToken) } -> { "StartSelectorType" :: StartSelectorType, "AfterFragmentNumber" :: NullOrUndefined (FragmentNumberString), "StartTimestamp" :: NullOrUndefined (Timestamp), "ContinuationToken" :: NullOrUndefined (ContinuationToken) }) -> StartSelector
+newStartSelector' :: StartSelectorType -> ({ "StartSelectorType" :: StartSelectorType, "AfterFragmentNumber" :: Maybe (FragmentNumberString), "StartTimestamp" :: Maybe (Timestamp), "ContinuationToken" :: Maybe (ContinuationToken) } -> { "StartSelectorType" :: StartSelectorType, "AfterFragmentNumber" :: Maybe (FragmentNumberString), "StartTimestamp" :: Maybe (Timestamp), "ContinuationToken" :: Maybe (ContinuationToken) }) -> StartSelector
 ```
 
 Constructs StartSelector's fields from required parameters

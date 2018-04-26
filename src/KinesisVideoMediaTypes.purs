@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -20,7 +19,7 @@ options = defaultOptions { unwrapSingleConstructors = true }
 
 -- | <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.</p>
 newtype ClientLimitExceededException = ClientLimitExceededException 
-  { "Message" :: NullOrUndefined (ErrorMessage)
+  { "Message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeClientLimitExceededException :: Newtype ClientLimitExceededException _
 derive instance repGenericClientLimitExceededException :: Generic ClientLimitExceededException _
@@ -30,18 +29,18 @@ instance encodeClientLimitExceededException :: Encode ClientLimitExceededExcepti
 
 -- | Constructs ClientLimitExceededException from required parameters
 newClientLimitExceededException :: ClientLimitExceededException
-newClientLimitExceededException  = ClientLimitExceededException { "Message": (NullOrUndefined Nothing) }
+newClientLimitExceededException  = ClientLimitExceededException { "Message": Nothing }
 
 -- | Constructs ClientLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClientLimitExceededException' :: ( { "Message" :: NullOrUndefined (ErrorMessage) } -> {"Message" :: NullOrUndefined (ErrorMessage) } ) -> ClientLimitExceededException
-newClientLimitExceededException'  customize = (ClientLimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newClientLimitExceededException' :: ( { "Message" :: Maybe (ErrorMessage) } -> {"Message" :: Maybe (ErrorMessage) } ) -> ClientLimitExceededException
+newClientLimitExceededException'  customize = (ClientLimitExceededException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client connections.</p>
 newtype ConnectionLimitExceededException = ConnectionLimitExceededException 
-  { "Message" :: NullOrUndefined (ErrorMessage)
+  { "Message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeConnectionLimitExceededException :: Newtype ConnectionLimitExceededException _
 derive instance repGenericConnectionLimitExceededException :: Generic ConnectionLimitExceededException _
@@ -51,12 +50,12 @@ instance encodeConnectionLimitExceededException :: Encode ConnectionLimitExceede
 
 -- | Constructs ConnectionLimitExceededException from required parameters
 newConnectionLimitExceededException :: ConnectionLimitExceededException
-newConnectionLimitExceededException  = ConnectionLimitExceededException { "Message": (NullOrUndefined Nothing) }
+newConnectionLimitExceededException  = ConnectionLimitExceededException { "Message": Nothing }
 
 -- | Constructs ConnectionLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConnectionLimitExceededException' :: ( { "Message" :: NullOrUndefined (ErrorMessage) } -> {"Message" :: NullOrUndefined (ErrorMessage) } ) -> ConnectionLimitExceededException
-newConnectionLimitExceededException'  customize = (ConnectionLimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newConnectionLimitExceededException' :: ( { "Message" :: Maybe (ErrorMessage) } -> {"Message" :: Maybe (ErrorMessage) } ) -> ConnectionLimitExceededException
+newConnectionLimitExceededException'  customize = (ConnectionLimitExceededException <<< customize) { "Message": Nothing }
 
 
 
@@ -97,8 +96,8 @@ instance encodeFragmentNumberString :: Encode FragmentNumberString where encode 
 
 
 newtype GetMediaInput = GetMediaInput 
-  { "StreamName" :: NullOrUndefined (StreamName)
-  , "StreamARN" :: NullOrUndefined (ResourceARN)
+  { "StreamName" :: Maybe (StreamName)
+  , "StreamARN" :: Maybe (ResourceARN)
   , "StartSelector" :: (StartSelector)
   }
 derive instance newtypeGetMediaInput :: Newtype GetMediaInput _
@@ -109,18 +108,18 @@ instance encodeGetMediaInput :: Encode GetMediaInput where encode = genericEncod
 
 -- | Constructs GetMediaInput from required parameters
 newGetMediaInput :: StartSelector -> GetMediaInput
-newGetMediaInput _StartSelector = GetMediaInput { "StartSelector": _StartSelector, "StreamARN": (NullOrUndefined Nothing), "StreamName": (NullOrUndefined Nothing) }
+newGetMediaInput _StartSelector = GetMediaInput { "StartSelector": _StartSelector, "StreamARN": Nothing, "StreamName": Nothing }
 
 -- | Constructs GetMediaInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetMediaInput' :: StartSelector -> ( { "StreamName" :: NullOrUndefined (StreamName) , "StreamARN" :: NullOrUndefined (ResourceARN) , "StartSelector" :: (StartSelector) } -> {"StreamName" :: NullOrUndefined (StreamName) , "StreamARN" :: NullOrUndefined (ResourceARN) , "StartSelector" :: (StartSelector) } ) -> GetMediaInput
-newGetMediaInput' _StartSelector customize = (GetMediaInput <<< customize) { "StartSelector": _StartSelector, "StreamARN": (NullOrUndefined Nothing), "StreamName": (NullOrUndefined Nothing) }
+newGetMediaInput' :: StartSelector -> ( { "StreamName" :: Maybe (StreamName) , "StreamARN" :: Maybe (ResourceARN) , "StartSelector" :: (StartSelector) } -> {"StreamName" :: Maybe (StreamName) , "StreamARN" :: Maybe (ResourceARN) , "StartSelector" :: (StartSelector) } ) -> GetMediaInput
+newGetMediaInput' _StartSelector customize = (GetMediaInput <<< customize) { "StartSelector": _StartSelector, "StreamARN": Nothing, "StreamName": Nothing }
 
 
 
 newtype GetMediaOutput = GetMediaOutput 
-  { "ContentType" :: NullOrUndefined (ContentType)
-  , "Payload" :: NullOrUndefined (Payload)
+  { "ContentType" :: Maybe (ContentType)
+  , "Payload" :: Maybe (Payload)
   }
 derive instance newtypeGetMediaOutput :: Newtype GetMediaOutput _
 derive instance repGenericGetMediaOutput :: Generic GetMediaOutput _
@@ -130,18 +129,18 @@ instance encodeGetMediaOutput :: Encode GetMediaOutput where encode = genericEnc
 
 -- | Constructs GetMediaOutput from required parameters
 newGetMediaOutput :: GetMediaOutput
-newGetMediaOutput  = GetMediaOutput { "ContentType": (NullOrUndefined Nothing), "Payload": (NullOrUndefined Nothing) }
+newGetMediaOutput  = GetMediaOutput { "ContentType": Nothing, "Payload": Nothing }
 
 -- | Constructs GetMediaOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetMediaOutput' :: ( { "ContentType" :: NullOrUndefined (ContentType) , "Payload" :: NullOrUndefined (Payload) } -> {"ContentType" :: NullOrUndefined (ContentType) , "Payload" :: NullOrUndefined (Payload) } ) -> GetMediaOutput
-newGetMediaOutput'  customize = (GetMediaOutput <<< customize) { "ContentType": (NullOrUndefined Nothing), "Payload": (NullOrUndefined Nothing) }
+newGetMediaOutput' :: ( { "ContentType" :: Maybe (ContentType) , "Payload" :: Maybe (Payload) } -> {"ContentType" :: Maybe (ContentType) , "Payload" :: Maybe (Payload) } ) -> GetMediaOutput
+newGetMediaOutput'  customize = (GetMediaOutput <<< customize) { "ContentType": Nothing, "Payload": Nothing }
 
 
 
 -- | <p>The value for this input parameter is invalid.</p>
 newtype InvalidArgumentException = InvalidArgumentException 
-  { "Message" :: NullOrUndefined (ErrorMessage)
+  { "Message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeInvalidArgumentException :: Newtype InvalidArgumentException _
 derive instance repGenericInvalidArgumentException :: Generic InvalidArgumentException _
@@ -151,18 +150,18 @@ instance encodeInvalidArgumentException :: Encode InvalidArgumentException where
 
 -- | Constructs InvalidArgumentException from required parameters
 newInvalidArgumentException :: InvalidArgumentException
-newInvalidArgumentException  = InvalidArgumentException { "Message": (NullOrUndefined Nothing) }
+newInvalidArgumentException  = InvalidArgumentException { "Message": Nothing }
 
 -- | Constructs InvalidArgumentException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidArgumentException' :: ( { "Message" :: NullOrUndefined (ErrorMessage) } -> {"Message" :: NullOrUndefined (ErrorMessage) } ) -> InvalidArgumentException
-newInvalidArgumentException'  customize = (InvalidArgumentException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidArgumentException' :: ( { "Message" :: Maybe (ErrorMessage) } -> {"Message" :: Maybe (ErrorMessage) } ) -> InvalidArgumentException
+newInvalidArgumentException'  customize = (InvalidArgumentException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p> Status Code: 400, Caller used wrong endpoint to write data to a stream. On receiving such an exception, the user must call <code>GetDataEndpoint</code> with <code>AccessMode</code> set to "READ" and use the endpoint Kinesis Video returns in the next <code>GetMedia</code> call. </p>
 newtype InvalidEndpointException = InvalidEndpointException 
-  { "Message" :: NullOrUndefined (ErrorMessage)
+  { "Message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeInvalidEndpointException :: Newtype InvalidEndpointException _
 derive instance repGenericInvalidEndpointException :: Generic InvalidEndpointException _
@@ -172,18 +171,18 @@ instance encodeInvalidEndpointException :: Encode InvalidEndpointException where
 
 -- | Constructs InvalidEndpointException from required parameters
 newInvalidEndpointException :: InvalidEndpointException
-newInvalidEndpointException  = InvalidEndpointException { "Message": (NullOrUndefined Nothing) }
+newInvalidEndpointException  = InvalidEndpointException { "Message": Nothing }
 
 -- | Constructs InvalidEndpointException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidEndpointException' :: ( { "Message" :: NullOrUndefined (ErrorMessage) } -> {"Message" :: NullOrUndefined (ErrorMessage) } ) -> InvalidEndpointException
-newInvalidEndpointException'  customize = (InvalidEndpointException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidEndpointException' :: ( { "Message" :: Maybe (ErrorMessage) } -> {"Message" :: Maybe (ErrorMessage) } ) -> InvalidEndpointException
+newInvalidEndpointException'  customize = (InvalidEndpointException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
 newtype NotAuthorizedException = NotAuthorizedException 
-  { "Message" :: NullOrUndefined (ErrorMessage)
+  { "Message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeNotAuthorizedException :: Newtype NotAuthorizedException _
 derive instance repGenericNotAuthorizedException :: Generic NotAuthorizedException _
@@ -193,12 +192,12 @@ instance encodeNotAuthorizedException :: Encode NotAuthorizedException where enc
 
 -- | Constructs NotAuthorizedException from required parameters
 newNotAuthorizedException :: NotAuthorizedException
-newNotAuthorizedException  = NotAuthorizedException { "Message": (NullOrUndefined Nothing) }
+newNotAuthorizedException  = NotAuthorizedException { "Message": Nothing }
 
 -- | Constructs NotAuthorizedException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotAuthorizedException' :: ( { "Message" :: NullOrUndefined (ErrorMessage) } -> {"Message" :: NullOrUndefined (ErrorMessage) } ) -> NotAuthorizedException
-newNotAuthorizedException'  customize = (NotAuthorizedException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newNotAuthorizedException' :: ( { "Message" :: Maybe (ErrorMessage) } -> {"Message" :: Maybe (ErrorMessage) } ) -> NotAuthorizedException
+newNotAuthorizedException'  customize = (NotAuthorizedException <<< customize) { "Message": Nothing }
 
 
 
@@ -222,7 +221,7 @@ instance encodeResourceARN :: Encode ResourceARN where encode = genericEncode op
 
 -- | <p>Status Code: 404, The stream with the given name does not exist.</p>
 newtype ResourceNotFoundException = ResourceNotFoundException 
-  { "Message" :: NullOrUndefined (ErrorMessage)
+  { "Message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeResourceNotFoundException :: Newtype ResourceNotFoundException _
 derive instance repGenericResourceNotFoundException :: Generic ResourceNotFoundException _
@@ -232,21 +231,21 @@ instance encodeResourceNotFoundException :: Encode ResourceNotFoundException whe
 
 -- | Constructs ResourceNotFoundException from required parameters
 newResourceNotFoundException :: ResourceNotFoundException
-newResourceNotFoundException  = ResourceNotFoundException { "Message": (NullOrUndefined Nothing) }
+newResourceNotFoundException  = ResourceNotFoundException { "Message": Nothing }
 
 -- | Constructs ResourceNotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceNotFoundException' :: ( { "Message" :: NullOrUndefined (ErrorMessage) } -> {"Message" :: NullOrUndefined (ErrorMessage) } ) -> ResourceNotFoundException
-newResourceNotFoundException'  customize = (ResourceNotFoundException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newResourceNotFoundException' :: ( { "Message" :: Maybe (ErrorMessage) } -> {"Message" :: Maybe (ErrorMessage) } ) -> ResourceNotFoundException
+newResourceNotFoundException'  customize = (ResourceNotFoundException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Identifies the chunk on the Kinesis video stream where you want the <code>GetMedia</code> API to start returning media data. You have the following options to identify the starting chunk: </p> <ul> <li> <p>Choose the latest (or oldest) chunk.</p> </li> <li> <p>Identify a specific chunk. You can identify a specific chunk either by providing a fragment number or time stamp (server or producer). </p> </li> <li> <p>Each chunk's metadata includes a continuation token as a Matroska (MKV) tag (<code>AWS_KINESISVIDEO_CONTINUATION_TOKEN</code>). If your previous <code>GetMedia</code> request terminated, you can use this tag value in your next <code>GetMedia</code> request. The API then starts returning chunks starting where the last API ended.</p> </li> </ul>
 newtype StartSelector = StartSelector 
   { "StartSelectorType" :: (StartSelectorType)
-  , "AfterFragmentNumber" :: NullOrUndefined (FragmentNumberString)
-  , "StartTimestamp" :: NullOrUndefined (Types.Timestamp)
-  , "ContinuationToken" :: NullOrUndefined (ContinuationToken)
+  , "AfterFragmentNumber" :: Maybe (FragmentNumberString)
+  , "StartTimestamp" :: Maybe (Types.Timestamp)
+  , "ContinuationToken" :: Maybe (ContinuationToken)
   }
 derive instance newtypeStartSelector :: Newtype StartSelector _
 derive instance repGenericStartSelector :: Generic StartSelector _
@@ -256,12 +255,12 @@ instance encodeStartSelector :: Encode StartSelector where encode = genericEncod
 
 -- | Constructs StartSelector from required parameters
 newStartSelector :: StartSelectorType -> StartSelector
-newStartSelector _StartSelectorType = StartSelector { "StartSelectorType": _StartSelectorType, "AfterFragmentNumber": (NullOrUndefined Nothing), "ContinuationToken": (NullOrUndefined Nothing), "StartTimestamp": (NullOrUndefined Nothing) }
+newStartSelector _StartSelectorType = StartSelector { "StartSelectorType": _StartSelectorType, "AfterFragmentNumber": Nothing, "ContinuationToken": Nothing, "StartTimestamp": Nothing }
 
 -- | Constructs StartSelector's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStartSelector' :: StartSelectorType -> ( { "StartSelectorType" :: (StartSelectorType) , "AfterFragmentNumber" :: NullOrUndefined (FragmentNumberString) , "StartTimestamp" :: NullOrUndefined (Types.Timestamp) , "ContinuationToken" :: NullOrUndefined (ContinuationToken) } -> {"StartSelectorType" :: (StartSelectorType) , "AfterFragmentNumber" :: NullOrUndefined (FragmentNumberString) , "StartTimestamp" :: NullOrUndefined (Types.Timestamp) , "ContinuationToken" :: NullOrUndefined (ContinuationToken) } ) -> StartSelector
-newStartSelector' _StartSelectorType customize = (StartSelector <<< customize) { "StartSelectorType": _StartSelectorType, "AfterFragmentNumber": (NullOrUndefined Nothing), "ContinuationToken": (NullOrUndefined Nothing), "StartTimestamp": (NullOrUndefined Nothing) }
+newStartSelector' :: StartSelectorType -> ( { "StartSelectorType" :: (StartSelectorType) , "AfterFragmentNumber" :: Maybe (FragmentNumberString) , "StartTimestamp" :: Maybe (Types.Timestamp) , "ContinuationToken" :: Maybe (ContinuationToken) } -> {"StartSelectorType" :: (StartSelectorType) , "AfterFragmentNumber" :: Maybe (FragmentNumberString) , "StartTimestamp" :: Maybe (Types.Timestamp) , "ContinuationToken" :: Maybe (ContinuationToken) } ) -> StartSelector
+newStartSelector' _StartSelectorType customize = (StartSelector <<< customize) { "StartSelectorType": _StartSelectorType, "AfterFragmentNumber": Nothing, "ContinuationToken": Nothing, "StartTimestamp": Nothing }
 
 
 
